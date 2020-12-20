@@ -44,26 +44,24 @@
 		</div>
 		<br />
 	</div>
-	<div style="margin-left: 42%">
-		<ul class="pagination">
-			<li class="page-item <c:if test='${p.pageNo==1 }'>disabled</c:if>"><a
-				class="page-link"
-				<c:if test="${p.pageNo!=1 }">href="${pageContext.request.contextPath }/GoodsListServlet?pageNo=1&id=${id}"</c:if>>首页</a></li>
-			<li class="page-item <c:if test='${p.pageNo==1 }'>disabled</c:if>"><a
-				class="page-link"
-				<c:if test='${p.pageNo!=1 }'>href="${pageContext.request.contextPath }/GoodsListServlet?pageNo=${p.pageNo-1}&id=${id}"</c:if>>上一页</a></li>
-			<li class="page-item disabled"><a class="page-link" href="#"
-				style="color: red;">第${p.pageNo }页</a></li>
-			<li
-				class="page-item <c:if test='${p.totalPage==0 || p.pageNo==p.totalPage }'>disabled</c:if>"><a
-				class="page-link"
-				<c:if test="${p.pageNo!=p.totalPage }">href="${pageContext.request.contextPath }/GoodsListServlet?pageNo=${p.pageNo+1}&id=${id}"</c:if>>下一页</a></li>
-			<li
-				class="page-item <c:if test='${p.totalPage==0 || p.pageNo==p.totalPage }'>disabled</c:if>"><a
-				class="page-link"
-				<c:if test="${p.pageNo!=p.totalPage }">href="${pageContext.request.contextPath }/GoodsListServlet?pageNo=${p.totalPage}&id=${id}"</c:if>>尾页</a></li>
-		</ul>
-	</div>
+	<ul class="pagination justify-content-center">
+		<li class="page-item <c:if test='${p.pageNo==1 }'>disabled</c:if>"><a
+			class="page-link"
+			<c:if test="${p.pageNo!=1 }">href="${pageContext.request.contextPath }/GoodsListServlet?pageNo=1&id=${id}"</c:if>>首页</a></li>
+		<li class="page-item <c:if test='${p.pageNo==1 }'>disabled</c:if>"><a
+			class="page-link"
+			<c:if test='${p.pageNo!=1 }'>href="${pageContext.request.contextPath }/GoodsListServlet?pageNo=${p.pageNo-1}&id=${id}"</c:if>>上一页</a></li>
+		<li class="page-item disabled"><a class="page-link" href="#"
+			style="color: red;">第${p.pageNo }页</a></li>
+		<li
+			class="page-item <c:if test='${p.totalPage==0 || p.pageNo==p.totalPage }'>disabled</c:if>"><a
+			class="page-link"
+			<c:if test="${p.pageNo!=p.totalPage }">href="${pageContext.request.contextPath }/GoodsListServlet?pageNo=${p.pageNo+1}&id=${id}"</c:if>>下一页</a></li>
+		<li
+			class="page-item <c:if test='${p.totalPage==0 || p.pageNo==p.totalPage }'>disabled</c:if>"><a
+			class="page-link"
+			<c:if test="${p.pageNo!=p.totalPage }">href="${pageContext.request.contextPath }/GoodsListServlet?pageNo=${p.totalPage}&id=${id}"</c:if>>尾页</a></li>
+	</ul>
 	<br />
 	<jsp:include page="/common/footer.jsp" />
 </body>

@@ -21,11 +21,7 @@
 <body>
 	<jsp:include page="/common/header.jsp" />
 	<div class="container text-center">
-		<c:if test="${!empty msg }">
-			<div class="alert alert-danger">${msg }</div>
-		</c:if>
-		<form class="card"
-			action="${pageContext.request.contextPath }/UserRegisterServlet"
+		<form action="${pageContext.request.contextPath }/UserRegisterServlet"
 			method="post">
 			<h3>注册新用户</h3>
 			<div class="form-group">
@@ -38,21 +34,29 @@
 			</div>
 			<div class="form-group">
 				<input type="text" class="form-control" name="name"
-					placeholder="请输入收货人">
+					placeholder="请输入收货人(非必填)">
 			</div>
 			<div class="form-group">
 				<input type="text" class="form-control" name="phone"
-					placeholder="请输入收货电话">
+					placeholder="请输入收货电话(非必填)">
 			</div>
 			<div class="form-group">
 				<input type="text" class="form-control" name="address"
-					placeholder="请输入收货地址">
+					placeholder="请输入收货地址(非必填)">
 			</div>
-			<br />
+			<div class="form-group">
+				<input type="password" class="form-control" id="checkcode"
+					name="code" placeholder="在此输入验证码" required> <br /> <img
+					src="${pageContext.request.contextPath }/CodeServlet" alt=""
+					onclick="this.src='${pageContext.request.contextPath }/CodeServlet?t='+Math.random();">
+			</div>
 			<div class="text-center">
-				<input type="submit" class="btn btn-primary" value="提交">
+				<input type="submit" class="btn btn-primary" value="注册">
 			</div>
 			<br />
+			<c:if test="${!empty msg }">
+				<div class="alert alert-danger">${msg }</div>
+			</c:if>
 		</form>
 		<br />
 	</div>

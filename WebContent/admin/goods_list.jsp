@@ -104,26 +104,24 @@
 			</c:forEach>
 
 		</table>
-		<div style="margin-left: 42%">
-			<ul class="pagination">
-				<li class="page-item <c:if test='${p.pageNo==1 }'>disabled</c:if>"><a
-					class="page-link"
-					<c:if test="${p.pageNo!=1 }">href="${pageContext.request.contextPath }/admin/goods_list?pageNo=1&type=${type }"</c:if>>首页</a></li>
-				<li class="page-item <c:if test='${p.pageNo==1 }'>disabled</c:if>"><a
-					class="page-link"
-					<c:if test='${p.pageNo!=1 }'>href="${pageContext.request.contextPath }/admin/goods_list?pageNo=${p.pageNo-1}&type=${type }"</c:if>>上一页</a></li>
-				<li class="page-item disabled"><a class="page-link" href="#"
-					style="color: red;">第${p.pageNo }页</a></li>
-				<li
-					class="page-item <c:if test='${p.totalPage==0 || p.pageNo==p.totalPage }'>disabled</c:if>"><a
-					class="page-link"
-					<c:if test="${p.pageNo!=p.totalPage }">href="${pageContext.request.contextPath }/admin/goods_list?pageNo=${p.pageNo+1}&type=${type }"</c:if>>下一页</a></li>
-				<li
-					class="page-item <c:if test='${p.totalPage==0 || p.pageNo==p.totalPage }'>disabled</c:if>"><a
-					class="page-link"
-					<c:if test="${p.pageNo!=p.totalPage }">href="${pageContext.request.contextPath }/admin/goods_list?pageNo=${p.totalPage}&type=${type }"</c:if>>尾页</a></li>
-			</ul>
-		</div>
+		<ul class="pagination justify-content-center">
+			<li class="page-item <c:if test='${p.pageNo==1 }'>disabled</c:if>"><a
+				class="page-link"
+				<c:if test="${p.pageNo!=1 }">href="${pageContext.request.contextPath }/admin/goods_list?pageNo=1&type=${type }"</c:if>>首页</a></li>
+			<li class="page-item <c:if test='${p.pageNo==1 }'>disabled</c:if>"><a
+				class="page-link"
+				<c:if test='${p.pageNo!=1 }'>href="${pageContext.request.contextPath }/admin/goods_list?pageNo=${p.pageNo-1}&type=${type }"</c:if>>上一页</a></li>
+			<li class="page-item disabled"><a class="page-link" href="#"
+				style="color: red;">第${p.pageNo }页</a></li>
+			<li
+				class="page-item <c:if test='${p.totalPage==0 || p.pageNo==p.totalPage }'>disabled</c:if>"><a
+				class="page-link"
+				<c:if test="${p.pageNo!=p.totalPage }">href="${pageContext.request.contextPath }/admin/goods_list?pageNo=${p.pageNo+1}&type=${type }"</c:if>>下一页</a></li>
+			<li
+				class="page-item <c:if test='${p.totalPage==0 || p.pageNo==p.totalPage }'>disabled</c:if>"><a
+				class="page-link"
+				<c:if test="${p.pageNo!=p.totalPage }">href="${pageContext.request.contextPath }/admin/goods_list?pageNo=${p.totalPage}&type=${type }"</c:if>>尾页</a></li>
+		</ul>
 	</div>
 	<jsp:include page="/common/footer.jsp" />
 </body>

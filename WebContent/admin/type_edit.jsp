@@ -21,9 +21,7 @@
 <body>
 	<jsp:include page="/admin/common/header.jsp" />
 	<div class="container-fluid">
-		<br> <br>
-		<form class="form-horizontal"
-			action="${pageContext.request.contextPath }/admin/type_edit"
+		<form action="${pageContext.request.contextPath }/admin/type_edit"
 			method="post">
 			<input type="hidden" name="id" value="${param.id }">
 			<div class="form-group">

@@ -44,6 +44,12 @@
 					onclick="confirm('确定退出吗?')?window.location.href='${pageContext.request.contextPath }/user/UserLogoutServlet':''">退出</a></li>
 			</c:if>
 		</ul>
+		<form class="form-inline my-2 my-lg-0 mr-3"
+			action="${pageContext.request.contextPath }/GoodsSearchServlet">
+			<input class="form-control mr-sm-2" type="search" placeholder="搜索"
+				name="keyword">
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">搜索</button>
+		</form>
 		<div class="my-2 my-lg-0 mr-5">
 			<c:choose>
 				<c:when test="${!empty user }">

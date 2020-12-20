@@ -20,7 +20,6 @@ public class MainFilter implements Filter {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse resp = (HttpServletResponse) response;
 		String path = req.getRequestURI();
-		System.out.println(path);
 		if (req.getSession().getAttribute("user") != null) {
 			chain.doFilter(req, resp);
 		} else {

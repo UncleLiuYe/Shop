@@ -24,8 +24,7 @@
 		<c:if test="${!empty failMsg }">
 			<div class="alert alert-danger">${failMsg }</div>
 		</c:if>
-		<form class="form-horizontal"
-			action="${pageContext.request.contextPath }/admin/user_add"
+		<form action="${pageContext.request.contextPath }/admin/user_add"
 			method="post">
 			<div class="form-group">
 				<label for="input_name" class="col-sm-1 control-label">用户名</label>

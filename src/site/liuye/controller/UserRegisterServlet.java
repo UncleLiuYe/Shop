@@ -25,22 +25,28 @@ public class UserRegisterServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		request.setCharacterEncoding("utf-8");
-		UserService userService = new UserService();
-		User user = new User();
-		try {
-			BeanUtils.copyProperties(user, request.getParameterMap());
-		} catch (IllegalAccessException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (InvocationTargetException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		if (userService.register(user)) {
-			request.setAttribute("msg", "注册成功，请登录！");
-			request.getRequestDispatcher("user_login.jsp").forward(request, response);
+		String code = request.getParameter("code");
+		if (request.getSession().getAttribute("code").toString().equalsIgnoreCase(code)) {
+			UserService userService = new UserService();
+			User user = new User();
+			try {
+				BeanUtils.copyProperties(user, request.getParameterMap());
+			} catch (IllegalAccessException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (InvocationTargetException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			if (userService.register(user)) {
+				request.setAttribute("msg", "注册成功，请登录！");
+				request.getRequestDispatcher("user_login.jsp").forward(request, response);
+			} else {
+				request.setAttribute("msg", "用户名重复，请重新填写！");
+				request.getRequestDispatcher("user_register.jsp").forward(request, response);
+			}
 		} else {
-			request.setAttribute("msg", "用户名重复，请重新填写！");
+			request.setAttribute("msg", "验证码错误！");
 			request.getRequestDispatcher("user_register.jsp").forward(request, response);
 		}
 	}

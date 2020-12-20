@@ -27,7 +27,12 @@
 				class="form-control" name="username" id="username"
 				placeholder="在此输入用户名" required> <label for="password"></label>
 			<input type="password" class="form-control" id="password"
-				name="password" placeholder="在此输入密码" required> <br />
+				name="password" placeholder="在此输入密码" required> <br /> <input
+				type="password" class="form-control" id="checkcode" name="code"
+				placeholder="在此输入验证码" required> <br /> <img
+				src="${pageContext.request.contextPath }/CodeServlet" alt=""
+				onclick="this.src='${pageContext.request.contextPath }/CodeServlet?t='+Math.random();">
+			<br /> <br />
 			<button type="submit" class="btn btn-primary">登录</button>
 			<br /> <br />
 			<c:if test="${!empty msg }">
